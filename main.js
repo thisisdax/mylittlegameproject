@@ -875,7 +875,7 @@ function render (a) {
       platform[i].randomizeX = Math.floor(Math.random() * 1320)
       platform[i].randomizeValueOne = Math.floor(Math.random() * 1000) + 500
       platform[i].randomizeValueTwo = Math.floor(Math.random() * 200) + 400
-      platform[i].value = Math.floor(Math.random() * 10) + 80 //change this number for testing
+      platform[i].value = Math.floor(Math.random() * 10) + 10 //change this number for testing
       if (i === 0) {
         $('.platform0').css({top: platform[0].y, left: platform[0].x})
         $('.platform0').css("background-color", "yellow")

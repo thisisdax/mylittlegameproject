@@ -18,7 +18,7 @@ WAD and UP, LEFT, RIGHT arrow keys are used for movement in battle sequence.
 
 ## Live Version
 
-Where is this deployed online (github pages, heroku etc), give us the link and any access details we need.
+Live version - https://thisisdax.github.io/mylittlegameproject/
 
 ## Built With
 
