@@ -9,7 +9,7 @@ body {
   position: relative;
   margin: 0 auto;
   /*background: url(sprite_copy.png) 80px 76px;*/
-  background: url(/Users/Dax/WDI/mylittlegameproject/655fac1b05fe23c422684f99c0416aaf.jpg)
+  background: url(img/655fac1b05fe23c422684f99c0416aaf.jpg)
 }
 
 .whoWin {
@@ -31,83 +31,83 @@ body {
 }
 
 ._4 {
-  background: url(sprite_copy.png) -516px -335px;
+  background: url(img/sprite_copy.png) -516px -335px;
 }
 
 ._2 {
-  background: url(character_copy.png) -82px -1px;
+  background: url(img/character_copy.png) -82px -1px;
 }
 
 ._3 {
-  background: url(sprite_copy.png) -515px -410px;
+  background: url(img/sprite_copy.png) -515px -410px;
 }
 
 ._1 {
-  background: url(sprite_copy.png) -268px -496px;
+  background: url(img/sprite_copy.png) -268px -496px;
 }
 
 ._5 {
-  background: url(sprite_copy.png) -515px 1150px;
+  background: url(img/sprite_copy.png) -515px 1150px;
 }
 
 ._6 {
-  background: url(character_copy.png) -84px -326px;
+  background: url(img/character_copy.png) -84px -326px;
 }
 
 ._7 {
-  background: url(character_copy.png) -567px -646px /*bad guy facing front -567px -646px facing back -567px -890px facing right -567px -807px*/
+  background: url(img/character_copy.png) -567px -646px /*bad guy facing front -567px -646px facing back -567px -890px facing right -567px -807px*/
 }
 
 ._8 {
-  background: url(character_copy.png) -809px -970px /*beard guy facing front -809px -970px facing left -809px -1050px facing right -804px -1130px facing back -809px -1210px*/
+  background: url(img/character_copy.png) -809px -970px /*beard guy facing front -809px -970px facing left -809px -1050px facing right -804px -1130px facing back -809px -1210px*/
 }
 
 ._9 {
-  background: url(character_copy.png) -325px -970px /*girl facing back -325px -1210px facing front -325px -970px facing left -325px -1050px facing right -325px -1130px*/
+  background: url(img/character_copy.png) -325px -970px /*girl facing back -325px -1210px facing front -325px -970px facing left -325px -1050px facing right -325px -1130px*/
 }
 
 ._11 {
-  background: url(sprite_copy.png) -764px -416px;
+  background: url(img/sprite_copy.png) -764px -416px;
 }
 
 ._12 {
-  background: url(sprite_copy.png) -764px -331px;
+  background: url(img/sprite_copy.png) -764px -331px;
 }
 
 ._13 {
-  background: url(sprite_copy.png) -846px -165px;
+  background: url(img/sprite_copy.png) -846px -165px;
 }
 
 ._14 {
-  background: url(sprite_copy.png) -764px -83px;
+  background: url(img/sprite_copy.png) -764px -83px;
 }
 
 ._15 {
-  background: url(sprite_copy.png) -764px 0px;
+  background: url(img/sprite_copy.png) -764px 0px;
 }
 
 ._16 {
-  background: url(sprite_copy.png) -929px -82px;
+  background: url(img/sprite_copy.png) -929px -82px;
 }
 
 ._17 {
-  background: url(sprite_copy.png) -764px -165px;
+  background: url(img/sprite_copy.png) -764px -165px;
 }
 
 ._18 {
-  background: url(sprite_copy.png) -929px -165px;
+  background: url(img/sprite_copy.png) -929px -165px;
 }
 
 ._19 {
-  background: url(sprite_copy.png) -598px -579px;
+  background: url(img/sprite_copy.png) -598px -579px;
 }
 
 ._20 {
-  background: url(sprite_copy.png) -763px -579px;
+  background: url(img/sprite_copy.png) -763px -579px;
 }
 
 ._21 {
-  background: url(sprite_copy.png) -1011px -4px;
+  background: url(img/sprite_copy.png) -1011px -4px;
 }
 
 .battlebox {
@@ -115,7 +115,6 @@ body {
   height: 602px;
   margin: 30px auto;
   position: relative;
-  /*background-image: url(/Users/Dax/WDI/mylittlegameproject/OACf5cL.gif);*/
   background-size: cover;
 }
 
@@ -133,7 +132,7 @@ body {
   float: left;
   top: 520px;
   border-radius: 30px;
-  background: url(character_copy.png) -82px -2px;
+  background: url(img/character_copy.png) -82px -2px;
   border: none;
 }
 

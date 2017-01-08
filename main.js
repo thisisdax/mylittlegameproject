@@ -1,7 +1,7 @@
 var boxUno = [ // 1 === boundary, 2 === character, 3 === door to previous map, 4 === door to next map, 5 === npc
   [1, 1, 1, 1, 1, 1, 12, 19, 19, 19, 19, 14, 1, 1, 1, 1, 1],
   [1, 2, 0, 0, 5, 1, 11, 11, 11, 11, 11, 14, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 1, 1, 11, 15, 13, 13, 13, 18, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 1, 14, 11, 15, 13, 13, 13, 18, 0, 0, 0, 0, 1],
   [1, 0, 0, 0, 0, 14, 11, 14, 0, 0, 0, 0, 7, 0, 0, 0, 1],
   [1, 0, 0, 0, 0, 17, 13, 18, 0, 0, 0, 0, 0, 0, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 13, 13, 13, 16, 0, 1],
@@ -19,7 +19,7 @@ var boxDos = [
   [1, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
   [1, 0, 0, 0, 15, 13, 16, 0, 0, 0, 15, 13, 16, 0, 0, 0, 1],
-  [1, 0, 0, 0, 15, 11, 16, 0, 0, 0, 15, 11, 16, 0, 0, 0, 1],
+  [1, 0, 0, 0, 14, 11, 14, 0, 0, 0, 14, 11, 14, 0, 0, 0, 1],
   [1, 0, 0, 0, 14, 11, 17, 13, 13, 13, 18, 11, 14, 0, 0, 0, 1],
   [1, 1, 1, 1, 14, 11, 11, 11, 11, 11, 11, 11, 14, 1, 1, 4, 1]
 ]
@@ -330,16 +330,16 @@ function battleInit (npcNumber) {
   $('.battlebox').append('<div class="playerOne"></div>')
   $('.battlebox').append('<div class="playerTwo"></div>')
   if (npcNumber === 0) {
-    $('.playerTwo').css('background', 'url(character_copy.png) -84px -324px')
-    $('.battlebox').css('background-image', 'url(/Users/Dax/WDI/mylittlegameproject/gkKviRB.gif)')
+    $('.playerTwo').css('background', 'url(img/character_copy.png) -84px -324px')
+    $('.battlebox').css('background-image', 'url(img/gkKviRB.gif)')
   }
   if (npcNumber === 1) {
-    $('.playerTwo').css('background', 'url(character_copy.png) -567px -646px')
-    $('.battlebox').css('background-image', 'url(/Users/Dax/WDI/mylittlegameproject/OACf5cL.gif)')
+    $('.playerTwo').css('background', 'url(img/character_copy.png) -567px -646px')
+    $('.battlebox').css('background-image', 'url(img/OACf5cL.gif)')
   }
   if (npcNumber === 2) {
-    $('.playerTwo').css('background', 'url(character_copy.png) -809px -970px')
-    $('.battlebox').css('background-image', 'url(/Users/Dax/WDI/mylittlegameproject/MHWLac7.gif)')
+    $('.playerTwo').css('background', 'url(img/character_copy.png) -809px -970px')
+    $('.battlebox').css('background-image', 'url(img/MHWLac7.gif)')
   }
   $('.battlebox').append('<div class="platform1"></div>')
   $('.battlebox').append('<div class="platform2"></div>')
@@ -373,7 +373,6 @@ function storyInit () {
 
 function gameInit () {
   drawBox()
-  // battleInit()
   storyInit()
   popDOM()
   findPosition()
@@ -473,7 +472,7 @@ document.onkeydown = function (e) {
         $('._2').css('background', '')
         moveLeft()
         drawBox()
-        $('._2').css('background', 'url(character_copy.png) -80px -81px')
+        $('._2').css('background', 'url(img/character_copy.png) -80px -81px')
       } else if (gamestate === 'battle' && conversation === false) {
         playerOne.runLeft()
       }
@@ -484,7 +483,7 @@ document.onkeydown = function (e) {
         $('._2').css('background', '')
         moveUp()
         drawBox()
-        $('._2').css('background', 'url(character_copy.png) -84px -244px')
+        $('._2').css('background', 'url(img/character_copy.png) -84px -244px')
       } else if (gamestate === 'battle' && conversation === false) {
         playerOne.jump()
         playerOne.doubleJump()
@@ -496,7 +495,7 @@ document.onkeydown = function (e) {
         $('._2').css('background', '')
         moveRight()
         drawBox()
-        $('._2').css('background', 'url(character_copy.png) -84px -161px')
+        $('._2').css('background', 'url(img/character_copy.png) -84px -161px')
       } else if (gamestate === 'battle' && conversation === false) {
         playerOne.runRight()
       }
@@ -507,7 +506,7 @@ document.onkeydown = function (e) {
         $('._2').css('background', '')
         moveDown()
         drawBox()
-        $('._2').css('background', 'url(character_copy.png) -82px 0px')
+        $('._2').css('background', 'url(img/character_copy.png) -82px 0px')
       } else if (gamestate === 'battle' && conversation === false) {
 
       }
@@ -540,20 +539,11 @@ document.onkeydown = function (e) {
 
     case 32: // space
       if (gamestate === 'story' && conversation === false) {
-        console.log('gamestate story and this is logging case 32');
-        // npc(5)
+        counter = 0
         npc(6)
         npc(7)
         npc(8)
         npc(9)
-        console.log('first npc talk:',npcNumber);
-        console.log(messageArray[npcNumber]);
-        // $(document).keydown(function (e) {
-        //   console.log(e.which + ' pressed')
-        //   if (e.which === 90) { // shift this to npc function to validate
-        //     battleInit()
-        //   }
-        // })
       } else if (conversation === true) {
         if (counter < messageArray[npcNumber].length) {
           $('.messagebox').css('visibility', 'visible').text(messageArray[npcNumber][counter])
@@ -561,23 +551,13 @@ document.onkeydown = function (e) {
           console.log('this is running');
         } else if (counter = messageArray[npcNumber].length) {
           conversation = false
-          counter = 0
           $('.messagebox').css('visibility', 'hidden').text('')
           conversation = false
           if (npcNumber !== 3) {
             battleInit(npcNumber);
           }
-          console.log('22222');
         }
       }
-      // } else if (gamestate === 'battle') {
-        // $(document).keydown(function (e) {
-        //   console.log(e.which + ' pressed')
-        //   if (e.which === 32) { // think of how to validate when i get my brain
-        //     storyInit()
-        //   }
-        // })
-      // }
       break
 
     default: return // exit this handler for other keys
@@ -608,117 +588,85 @@ $(document).keyup(function (e) {
   }
 })
 
-// function messageBoard () {
-//   if (direction === 'S' && $('.row.' + (currentRow + 1)).find($('._5')).index() === $('.row.' + currentRow).find($('.column' + currentColumn)).index()) {
-//     console.log('hello from top to bottom')
-//     $('.messagebox').css('visibility', 'visible').text('hello from the top')
-//     // conversation = false
-//   } else if (direction === 'N' && $('.row.' + (currentRow - 1)).find($('._5')).index() === $('.row.' + currentRow).find($('.column' + currentColumn)).index()) {
-//     console.log('hello from bottom to top')
-//     $('.messagebox').css('visibility', 'visible').text('hello from the bottom')
-//     // conversation = true
-//   } else if (direction === 'W' && $('.row.' + currentRow).find($('._5')).index() === $('.row.' + currentRow).find($('.column' + (currentColumn - 1))).index()) {
-//     console.log('hello from right to left')
-//     $('.messagebox').css('visibility', 'visible').text('hello from the right')
-//     // conversation = true
-//   } else if (direction === 'E' && $('.row.' + currentRow).find($('._5')).index() === $('.row.' + currentRow).find($('.column' + (currentColumn + 1))).index()) {
-//     console.log('hello from left to right')
-//     $('.messagebox').css('visibility', 'visible').text('hello from the left')
-//     // conversation = true
-//   }
-// }
-
 function checkDirection (a, direction) {
   if (direction === 'S') {
     if (a === 6) {
-      $('._'+a).css('background', 'url(character_copy.png) -84px -566px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -84px -566px')
     }
     if (a === 7) {
-      $('._'+a).css('background', 'url(character_copy.png) -567px -890px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -567px -890px')
     }
     if (a === 8) {
-      $('._'+a).css('background', 'url(character_copy.png) -809px -1210px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -809px -1210px')
     }
     if (a === 9) {
-      $('._'+a).css('background', 'url(character_copy.png) -325px -1210px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -325px -1210px')
     }
   }
   if (direction === 'E') {
     if (a === 6) {
-      $('._'+a).css('background', 'url(character_copy.png) -84px -406px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -84px -406px')
     }
     if (a === 7) {
-      $('._'+a).css('background', 'url(character_copy.png) -567px -726px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -567px -726px')
     }
     if (a === 8) {
-      $('._'+a).css('background', 'url(character_copy.png) -809px -1050px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -809px -1050px')
     }
     if (a === 9) {
-      $('._'+a).css('background', 'url(character_copy.png) -325px -1050px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -325px -1050px')
     }
   }
   if (direction === 'N') {
     if (a === 6) {
-      $('._'+a).css('background', 'url(character_copy.png) -84px -326px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -84px -326px')
     }
     if (a === 7) {
-      $('._'+a).css('background', 'url(character_copy.png) -567px -646px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -567px -646px')
     }
     if (a === 8) {
-      $('._'+a).css('background', 'url(character_copy.png) -809px -970px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -809px -970px')
     }
     if (a === 9) {
-      $('._'+a).css('background', 'url(character_copy.png) -325px -970px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -325px -970px')
     }
   }
   if (direction === 'W') {
     if (a === 6) {
-      $('._'+a).css('background', 'url(character_copy.png) -84px -486px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -84px -486px')
     }
     if (a === 7) {
-      $('._'+a).css('background', 'url(character_copy.png) -567px -807px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -567px -807px')
     }
     if (a === 8) {
-      $('._'+a).css('background', 'url(character_copy.png) -804px -1130px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -804px -1130px')
     }
     if (a === 9) {
-      $('._'+a).css('background', 'url(character_copy.png) -325px -1130px')
+      $('._'+a).css('background', 'url(img/character_copy.png) -325px -1130px')
     }
   }
 }
 
 function npc (a) {
   if (direction === 'S' && $('.row.' + (currentRow + 1)).find($('._'+a)).index() === $('.row.' + currentRow).find($('.column' + currentColumn)).index()) {
-    // $('.messagebox').css('visibility', 'visible').text('talking to an NPC')
     checkDirection(a, direction)
     $('.messagebox').css('visibility', 'visible').text('YOU: ...')
-    console.log(npcNumber);
     npcNumber = a - 6
-    console.log(npcNumber);
-    console.log('npc:',npcNumber);
-    console.log(counter);
     conversation = true
   } else if (direction === 'N' && $('.row.' + (currentRow - 1)).find($('._'+a)).index() === $('.row.' + currentRow).find($('.column' + currentColumn)).index()) {
-    // $('.messagebox').css('visibility', 'visible').text("Ding Dong Bell: Don't talk to me from the side!")
     checkDirection(a, direction)
     $('.messagebox').css('visibility', 'visible').text('YOU: ...')
     npcNumber = a - 6
-    console.log('npc:',npcNumber);
     conversation = true
   } else if (direction === 'W' && $('.row.' + currentRow).find($('._'+a)).index() === $('.row.' + currentRow).find($('.column' + (currentColumn - 1))).index()) {
-    // $('.messagebox').css('visibility', 'visible').text('talking to an NPC')
     checkDirection(a, direction)
     $('.messagebox').css('visibility', 'visible').text('YOU: ...')
     npcNumber = a - 6
-    console.log('npc:',npcNumber);
     conversation = true
   } else if (direction === 'E' && $('.row.' + currentRow).find($('._'+a)).index() === $('.row.' + currentRow).find($('.column' + (currentColumn + 1))).index()) {
-    // $('.messagebox').css('visibility', 'visible').text('Ding Dong Bell: Muahahahaha!')
-    // $('._'+a).css('background', 'url(character_copy.png) -84px -406px')
     checkDirection(a, direction)
     $('.messagebox').css('visibility', 'visible').text('YOU: ...')
     npcNumber = a - 6
-    console.log('npc:',npcNumber);
     conversation = true
   }
 }
@@ -752,6 +700,7 @@ function checkWin () {
     setTimeout(function () {
       storyInit()
       mySound.pause()
+      mySound.currentTime = 0
       conversation = false
       $('.whoWin').hide()
       $('.whoWin').text('')
@@ -765,6 +714,7 @@ function checkWin () {
     setTimeout(function () {
       storyInit()
       mySound.pause()
+      mySound.currentTime = 0
       conversation = false
       $('.whoWin').hide()
       $('.whoWin').text('Player 1 ')
@@ -778,6 +728,7 @@ function checkWin () {
       setTimeout(function () {
         storyInit()
         mySound.pause()
+        mySound.currentTime = 0
         conversation = false
         $('.whoWin').css({visibility: hidden})
       }, 3000)
@@ -788,6 +739,7 @@ function checkWin () {
       setTimeout(function () {
         storyInit()
         mySound.pause()
+        mySound.currentTime = 0
         conversation = false
         $('.whoWin').css({visibility: hidden})
       }, 3000)
@@ -919,57 +871,11 @@ function render (a) {
       }
       minusHp(playerOne, playerTwo)
       checkWin()
-      // if (isCollide(playerOne)) { // put this in a function
-      //   counter = 0
-      //   clearInterval(startTimerInterval)
-      //   $('.playerHealthTwo').removeClass('red')
-      //   var startTimerInterval = setInterval(function () {
-      //       if ($('.playerHealthTwo').hasClass('red')) {
-      //         $('.playerHealthTwo').removeClass('red')
-      //         counter++
-      //       } else {
-      //         $('.playerHealthTwo').addClass('red')
-      //       }
-      //       if (counter > 3) {
-      //         clearInterval(startTimerInterval)
-      //         $('.playerHealthTwo').removeClass('red')
-      //       }
-      //   },200)
-      //   $('.playerHealthTwo').css({width: '-=' + platform.value + '%'})
-      // }
-      // if (isCollide(playerTwo)) { // put this in a function
-      //   counter = 0
-      //   clearInterval(startTimerInterval)
-      //   $('.playerHealthOne').removeClass('red')
-      //   var startTimerInterval = setInterval(function () {
-      //       if ($('.playerHealthOne').hasClass('red')) {
-      //         $('.playerHealthOne').removeClass('red')
-      //         counter++
-      //       } else {
-      //         $('.playerHealthOne').addClass('red')
-      //       }
-      //       if (counter > 3) {
-      //         clearInterval(startTimerInterval)
-      //         $('.playerHealthOne').removeClass('red')
-      //       }
-      //   },200)
-      //   $('.playerHealthOne').css({width: '-=' + platform.value + '%'})
-      // }
-      // if (parseInt($('.playerHealthOne').css('width')) <= 5) { // put this in a function
-      //   clearInterval(startTimerIntervalTimer)
-      //   storyInit()
-      //   console.log('game over, player 2 win')
-      // }
-      // if (parseInt($('.playerHealthTwo').css('width')) <= 5) { // put this in a function
-      //   clearInterval(startTimerIntervalTimer)
-      //   storyInit()
-      //   console.log('game over, player 1 win')
-      // }
       platform[i].randomizeY = Math.floor(Math.random() * 310) + 240
       platform[i].randomizeX = Math.floor(Math.random() * 1320)
       platform[i].randomizeValueOne = Math.floor(Math.random() * 1000) + 500
       platform[i].randomizeValueTwo = Math.floor(Math.random() * 200) + 400
-      platform[i].value = Math.floor(Math.random() * 10) + 5
+      platform[i].value = Math.floor(Math.random() * 10) + 80 //change this number for testing
       if (i === 0) {
         $('.platform0').css({top: platform[0].y, left: platform[0].x})
         $('.platform0').css("background-color", "yellow")
@@ -1020,5 +926,3 @@ function render (a) {
   $('.platform2').css("background-color", "red")
   window.requestAnimationFrame(render)
 }
-
-// battleInit()
