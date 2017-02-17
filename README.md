@@ -34,4 +34,4 @@ Dax Tan - [thisisdax](https://github.com/thisisdax)
 
 ## Preview
 
-![alt tag] http://i.giphy.com/3o6Yg3Bo3l6pPNfntC.gif
+<img src="http://i.giphy.com/3o6Yg3Bo3l6pPNfntC.gif"/>
