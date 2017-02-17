@@ -31,3 +31,7 @@ Dax Tan - [thisisdax](https://github.com/thisisdax)
 ## Acknowledgments
 
 * Applied a generic collision detection algorithm [https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection]
+
+## Preview
+
+![alt tag] http://i.giphy.com/3o6Yg3Bo3l6pPNfntC.gif
